@@ -1,25 +1,22 @@
 import React from 'react';
-
-import logo from './logo.svg';
 import './App.css';
 
-const App = () => (
+import Home from '../../containers/Home';
+
+const App = () => {
+  let d = new Date();
+  let image = document.body;
+  if(d.getHours() > 8 && d.getHours() < 18) {
+    console.log(image)
+    image.style.backgroundImage = "url(https://i.pinimg.com/originals/a7/f4/26/a7f4267372b13423aa8cbd691a0b279c.jpg)";    
+  }
+  else {
+    image.style.backgroundImage = "url(https://i.redd.it/tilhltqozyw41.png)"
+  }
+  return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Home/>
     </div>
-  );
+  )};
 
 export default App;

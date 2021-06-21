@@ -1,0 +1,7 @@
+.back {
+    cursor: pointer;
+}
+
+.back:hover {
+    text-shadow: 0 0 20px white;
+}
