@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import moment from 'moment'
 import './style.css';
 import SearchBar from '../../containers/SearchBar';
 
 
-
+const date = moment().format("HH:mm:ss");
 const Home = ({weather, city, back}) => {
   let icon = "";
 
@@ -12,7 +12,9 @@ const Home = ({weather, city, back}) => {
     if(weather.description.includes('Sunny')) {
       icon = "fa-sun";
     }
-    else if(weather.description.includes('Cloud')) {
+    else if(weather.description.includes('Cloudy')) {
+      icon = "fa-cloud";
+    }else if(weather.description.includes('cloudy')) {
       icon = "fa-cloud";
     }
     else if(weather.description.includes('Rain')){
@@ -30,6 +32,20 @@ const Home = ({weather, city, back}) => {
   }
 
 
+const [dateTime, setDateTime] = useState({
+  date: date
+});
+useEffect(() => {
+  const timer = setInterval(() => {
+   const date = moment().format("HH:mm:ss");
+   setDateTime({
+     date: date
+   });
+  }, 1000);
+  return () => clearInterval(timer);
+}, [])
+
+
   return (
     <div className="container">
 
@@ -40,7 +56,7 @@ const Home = ({weather, city, back}) => {
         </div>
         <div className="row">
           <div className="col-6 mt-5">
-            <h2 className="display-2">{moment().format("HH:mm:ss")}</h2>
+            <h2 className="display-2">{dateTime.date}</h2>
             <p>{moment().format("dddd MMMM DD, YYYY")}</p>
           </div>
           <div className="col-6 mt-5 d-flex flex-column align-items-end ">
