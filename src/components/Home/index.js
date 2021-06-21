@@ -55,11 +55,11 @@ useEffect(() => {
             <h1 onClick={() => {back()}} className="display-1 mt-3 text-capitalize back">{city}</h1>
         </div>
         <div className="row">
-          <div className="col-6 mt-5">
+          <div className="col-md-6 mt-5">
             <h2 className="display-2">{dateTime.date}</h2>
             <p>{moment().format("dddd MMMM DD, YYYY")}</p>
           </div>
-          <div className="col-6 mt-5 d-flex flex-column align-items-end ">
+          <div className="col-md-6 mt-5 d-flex flex-column align-items-md-end ">
           <i className={["fas display-2 mb-4 "+icon]}></i>
           <p>{weather.description}</p>
           <p><i className="fas fa-wind"></i> {weather.wind} {weather.temperature}</p>
