@@ -71,22 +71,21 @@ useEffect(() => {
                 </p>
               </div>
             </div>
-            <div className="row">
+            <div className="row more mt-md-5 me-5">
               {more ? 
-              <button onClick={() => {moreInfos()}} className="btn btn-light rounded">LESS<i class="fas fa-chevron-circle-up"></i></button> :
-              <button onClick={() => {moreInfos()}} className="btn btn-light rounded">MORE<i class="fas fa-chevron-circle-down"></i></button>
+              <button onClick={() => {moreInfos()}} className="btn btn-light btn-more">LESS<i class="fas fa-chevron-circle-up"></i></button> :
+              <button onClick={() => {moreInfos()}} className="btn btn-light btn-more">MORE<i class="fas fa-chevron-circle-down"></i></button>
               }
             </div>
           </div>
           {more ? 
           <div className="row px-5 more-info">
             {weather.forecast ? weather.forecast.map(day =>(
-              <div className="col-3">
-            <p>{moment().add(day.day, 'days').format("dddd MMMM DD, YYYY")}</p>
-            <p className="">
-              <i className="fas fa-wind"></i> {day.wind} 
-              <i class="fas fa-thermometer-three-quarters"></i> {day.temperature}
-            </p>
+              <div className="col-md-3 mt-md-5">
+                <p>{moment().add(day.day, 'days').format("dddd MMMM DD, YYYY")}</p>
+                <p><i className="fas fa-wind"></i> {day.wind}</p>
+                <p><i class="fas fa-thermometer-three-quarters"></i> {day.temperature}
+                </p>
             </div>
               )):""}
           </div> :""}
