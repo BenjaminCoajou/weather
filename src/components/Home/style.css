@@ -6,6 +6,16 @@
     text-shadow: 0 0 20px white;
 }
 
+.today {
+    height: 55vh;
+}
+
+.more-info {
+    height: 45vh;
+    background-color: rgba(255, 254, 254, 0.671);
+    color: black;
+}
+
 @media (max-width: 780px){
     .w-25{
         width: 50% !important;
