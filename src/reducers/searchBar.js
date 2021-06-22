@@ -1,9 +1,10 @@
-import { SEARCH_CITY, SEARCH_CITY_SUCCESS } from "../actions/serachBar";
+import { SEARCH_CITY, SEARCH_CITY_ERROR, SEARCH_CITY_SUCCESS } from "../actions/serachBar";
 import { BACK } from "../actions/home";
 
 const initialState = {
     city: "",
     cityInfos: false,
+    error: false,
 };
 
 const searchBar = (state = initialState, action = {}) => {
@@ -17,12 +18,18 @@ const searchBar = (state = initialState, action = {}) => {
                 return {
                     ...state,
                     cityInfos: action.payload,
+                    error: false,
                 };
             case BACK:
                 return {
                 ...state,
                 cityInfos: false
-            }
+            };
+            case SEARCH_CITY_ERROR:
+                return {
+                    ...state,
+                    error: !state.error,
+                };
         default:
             return state;
     }

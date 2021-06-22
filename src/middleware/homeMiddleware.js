@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SUBMIT_CITY, searchCitySuccess } from '../actions/serachBar';
+import { SUBMIT_CITY, searchCitySuccess, searchCityError } from '../actions/serachBar';
 
 const homeMiddleware = (store) => (next) => (action) => {
     switch(action.type) {
@@ -8,8 +8,8 @@ const homeMiddleware = (store) => (next) => (action) => {
             .then((response) => {
                 store.dispatch(searchCitySuccess(response.data))
             })
-            .catch((error) => {
-                console.log('erreur api', error)
+            .catch(() => {
+                store.dispatch(searchCityError())
             });
             break;
         default:

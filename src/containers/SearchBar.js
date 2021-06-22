@@ -4,7 +4,8 @@ import { searchCity, submitCity } from '../actions/serachBar';
 import SearchBar from '../components/SearchBar';
 
 const mapStateToProps = (state) => ({
-    city: state.searchBar.city
+    city: state.searchBar.city,
+    error: state.searchBar.error,
 });
 
 const mapDispatchToprops = (dispatch) => ({

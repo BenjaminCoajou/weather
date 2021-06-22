@@ -7,7 +7,6 @@ const App = () => {
   let d = new Date();
   let image = document.body;
   if(d.getHours() > 8 && d.getHours() < 18) {
-    console.log(image)
     image.style.backgroundImage = "url(https://i.pinimg.com/originals/a7/f4/26/a7f4267372b13423aa8cbd691a0b279c.jpg)";    
   }
   else {

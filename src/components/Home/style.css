@@ -5,3 +5,14 @@
 .back:hover {
     text-shadow: 0 0 20px white;
 }
+
+@media (max-width: 780px){
+    .w-25{
+        width: 50% !important;
+    }
+}
+@media (max-width: 540px){
+    .w-25{
+        width: 40% !important;
+    }
+}

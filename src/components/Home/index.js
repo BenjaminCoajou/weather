@@ -62,7 +62,10 @@ useEffect(() => {
           <div className="col-md-6 mt-5 d-flex flex-column align-items-md-end ">
           <i className={["fas display-2 mb-4 "+icon]}></i>
           <p>{weather.description}</p>
-          <p><i className="fas fa-wind"></i> {weather.wind} {weather.temperature}</p>
+          <p className="w-25 d-flex justify-content-between align-items-baseline">
+            <i className="fas fa-wind"></i> {weather.wind} 
+            <i class="fas fa-thermometer-three-quarters"></i> {weather.temperature}
+            </p>
           </div>
         </div>
         </section>
