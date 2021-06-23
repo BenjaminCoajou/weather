@@ -33,6 +33,13 @@ const Home = ({weather, city, back, moreInfos, more}) => {
     }
   }
 
+  if(more) {
+    document.body.style.height = "100%"
+  }
+  else {
+    document.body.style.height = "100vh"
+  }
+
 
 const [dateTime, setDateTime] = useState({
   date: date
@@ -58,11 +65,11 @@ useEffect(() => {
                 <h1 onClick={() => {back()}} className="display-1 mt-3 text-capitalize back">{city}</h1>
             </div>
             <div className="row px-5">
-              <div className="col-md-6 mt-5">
+              <div className="col-md-6 mt-md-5">
                 <h2 className="display-2">{dateTime.date}</h2>
                 <p>{moment().format("dddd MMMM DD, YYYY")}</p>
               </div>
-              <div className="col-md-6 mt-5 d-flex flex-column align-items-md-end ">
+              <div className="col-md-6 mt-md-5 d-flex flex-column align-items-md-end ">
               <i className={["fas display-2 mb-4 "+icon]}></i>
               <p>{weather.description}</p>
               <p className="w-25 d-flex justify-content-between align-items-baseline">
